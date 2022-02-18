@@ -27,6 +27,19 @@ export class AppController {
     };
   }
 
+  @Get('test')
+  @Render('test/test_view')
+  testingLayout(){
+    return {
+      title: 'Layout Test',
+      items: [
+        'apple',
+        'orange',
+        'banana'
+      ]
+    }
+  }
+
   @Get('/testing')
   getHello(): string {
     return this.appService.getHello();
